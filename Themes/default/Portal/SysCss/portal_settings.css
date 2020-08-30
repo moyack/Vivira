@@ -1,0 +1,83 @@
+/**
+ * PortaMx Forum
+ * @package PortaMx
+ * @author PortaMx
+ * @copyright 2018 PortaMx
+ *
+ * file portal_settings.css
+ * CSS file for Portal Settings Admin part
+ *
+ * @version 1.41
+ */
+ 
+.pmx_table td {
+	vertical-align: none !important;
+}
+.setlcol {
+	padding: 5px !important;
+	width: 65%;
+	min-width: 339px;
+}
+.setrcol {
+	padding: 5px !important;
+	width: 35%;
+	min-width: 199px;
+}
+.tacnt {
+	text-align: center;
+}
+.setmh25 {
+	min-height: 25px;
+}
+.setmh35 {
+	min-height: 35px;
+}
+.setmh60 {
+	min-height: 60px;
+}
+.setw28 {
+	width: 28px;
+}
+.setmh25_100 {
+	min-height: 25px;
+	max-height: 100px;
+}
+.setw25fl {
+	float: left;
+	width: 25px;
+}
+.setw28fl {
+	float: left;
+	width: 28px;
+}
+.setmt4px {
+	margin-top: 4px;
+}
+.setmt5px {
+	margin-top: 5px;
+}
+.setmt7px {
+	margin-top: 7px;
+}
+.setlm10px {
+	margin-left: 10px;
+}
+.setmh25fl {
+	min-height: 25px;
+	float:left;
+}
+.settgcb {
+	float: left;
+	margin-top: 4px;
+}
+.hrline {
+	min-width: 545px;
+}
+.hrdiv {
+	min-width: 545px;
+	margin: 0;
+	text-align: right;
+}
+.input_radio {
+	margin-left: 0;
+}

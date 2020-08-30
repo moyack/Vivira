@@ -1,0 +1,59 @@
+# Sample .htaccess for PortaMx Forum
+# NOTE: Replace /forumpath/ with the path to your forum
+# If the forum in the root, simple use a /
+#
+# Enable the rewrite engine
+RewriteEngine On
+#
+# dont show indexes
+IndexIgnore *
+Options +FollowSymLinks
+Options -Indexes
+#
+# settings lock
+DirectoryIndex index.php
+<FilesMatch "(Settings|Settings_bak)\.php$">
+	Order deny,allow
+	Deny from all
+  Allow from localhost
+</FilesMatch>
+#
+# php security
+RewriteCond %{QUERY_STRING} ^[^=]*$
+RewriteCond %{QUERY_STRING} %2d|\- [NC]
+RewriteRule .? - [F,L]
+#
+# sef engine
+RewriteBase /forumpath/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?sef=$1 [L,QSA]
+#
+# compression
+<IfModule mod_deflate.c>
+	# Serve gzip compressed CSS files if they exist 
+	# and the client accepts gzip.
+	RewriteCond %{HTTP:Accept-encoding} gzip
+	RewriteCond %{REQUEST_FILENAME}\.gz -s
+	RewriteRule ^(.*)\.css $1\.css\.gz [QSA]
+
+	# Serve gzip compressed JS files if they exist 
+	# and the client accepts gzip.
+	RewriteCond %{HTTP:Accept-encoding} gzip
+	RewriteCond %{REQUEST_FILENAME}\.gz -s
+	RewriteRule ^(.*)\.js $1\.js\.gz [QSA]
+
+	# Serve correct content types, and prevent mod_deflate double gzip.
+	RewriteRule \.css\.gz$ - [T=text/css,E=no-gzip:1]
+	RewriteRule \.js\.gz$ - [T=text/javascript,E=no-gzip:1]
+
+	<FilesMatch (\.js\.gz|\.css\.gz)$>
+		# Serve correct encoding type.
+		Header append Content-Encoding gzip
+
+		# Force proxies to cache gzipped & 
+		# non-gzipped css/js files separately.
+		Header append Vary Accept-Encoding
+	</FilesMatch>
+</IfModule>
+#

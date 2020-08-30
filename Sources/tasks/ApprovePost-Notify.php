@@ -1,0 +1,121 @@
+<?php
+/**
+ * This file contains background notification code for any create post action
+ *
+ * PortaMx Forum
+ * @package PortaMx
+ * @author PortaMx & Simple Machines
+ * @copyright 2018 PortaMx,  Simple Machines and individual contributors
+ * @license http://www.simplemachines.org/about/smf/license.php BSD
+ *
+ * @version 1.41
+ */
+
+/**
+ * Class ApprovePost_Notify_Background
+ */
+class ApprovePost_Notify_Background extends PMX_BackgroundTask
+{
+	/**
+	 * This executes the task - loads up the info, puts the email in the queue and inserts any alerts as needed.
+	 * @return bool Always returns true
+	 */
+	public function execute()
+	{
+		global $pmxcFunc, $sourcedir, $scripturl, $modSettings, $context, $language;
+
+		if(!defined('is_sheduled_task'))
+			define('is_sheduled_task', true);
+
+		$msgOptions = $this->_details['msgOptions'];
+		$topicOptions = $this->_details['topicOptions'];
+		$posterOptions = $this->_details['posterOptions'];
+		$type = $this->_details['type'];
+
+		$members = array();
+		$alert_rows = array();
+
+		// We need to know who can approve this post.
+		require_once($sourcedir . '/Subs-Members.php');
+		$modMembers = membersAllowedTo('approve_posts', $topicOptions['board']);
+
+		$request = $pmxcFunc['db_query']('', '
+			SELECT id_member, email_address, lngfile
+			FROM {db_prefix}members
+			WHERE id_member IN({array_int:members})',
+			array(
+				'members' => $modMembers,
+			)
+		);
+
+		$watched = array();
+		while ($row = $pmxcFunc['db_fetch_assoc']($request))
+		{
+			$members[] = $row['id_member'];
+			$watched[$row['id_member']] = $row;
+		}
+		$pmxcFunc['db_free_result']($request);
+
+		if (empty($members))
+			return true;
+
+		require_once($sourcedir . '/Subs-Notify.php');
+		$members = array_unique($members);
+		$prefs = getNotifyPrefs($members, 'unapproved_post', true);
+		foreach ($watched as $member => $data)
+		{
+			$pref = !empty($prefs[$member]['unapproved_post']) ? $prefs[$member]['unapproved_post'] : 0;
+
+			if ($pref & 0x02)
+			{
+				// Emails are a bit complicated. We have to do language stuff.
+				require_once($sourcedir . '/Subs-Post.php');
+				require_once($sourcedir . '/ScheduledTasks.php');
+				loadEssentialThemeData();
+
+				$replacements = array(
+					'SUBJECT' => $msgOptions['subject'],
+					'LINK' => $scripturl . '?topic=' . $topicOptions['id'] . '.new#new',
+				);
+
+				$emaildata = loadEmailTemplate('alert_unapproved_post', $replacements, empty($data['lngfile']) ? $language : $data['lngfile']);
+				sendmail($data['email_address'], $emaildata['subject'], $emaildata['body'], null, 'm' . $topicOptions['id'], $emaildata['is_html']);
+			}
+
+			if ($pref & 0x01)
+			{
+				$alert_rows[] = array(
+					'alert_time' => time(),
+					'id_member' => $member,
+					'id_member_started' => $posterOptions['id'],
+					'member_name' => $posterOptions['name'],
+					'content_type' => 'unapproved',
+					'content_id' => $topicOptions['id'],
+					'content_action' => $type,
+					'is_read' => 0,
+					'extra' => json_encode(array(
+						'topic' => $topicOptions['id'],
+						'board' => $topicOptions['board'],
+						'content_subject' => $msgOptions['subject'],
+						'content_link' => $scripturl . '?topic=' . $topicOptions['id'] . '.new;topicseen#new',
+					), true),
+				);
+				updateMemberData($member, array('alerts' => '+'));
+			}
+		}
+
+		// Insert the alerts if any
+		if (!empty($alert_rows))
+			$pmxcFunc['db_insert']('',
+				'{db_prefix}user_alerts',
+				array('alert_time' => 'int', 'id_member' => 'int', 'id_member_started' => 'int', 'member_name' => 'string',
+					'content_type' => 'string', 'content_id' => 'int', 'content_action' => 'string', 'is_read' => 'int', 'extra' => 'string'),
+				$alert_rows,
+				array()
+			);
+
+		return true;
+	}
+}
+
+?>

@@ -1,0 +1,194 @@
+/**
+ * PortaMx Forum
+ * @package PortaMx
+ * @author PortaMx
+ * @copyright 2018 PortaMx
+ *
+ * file portal_popup.css
+ * CSS file for portal Admin popup parts
+ *
+ * @version 1.41
+ */
+
+/* globals */
+.pmx_scrolldiv {
+	overflow-x: auto;
+}
+.pmx_popupfrm {
+	margin-top: 0px;
+	padding: 5px;
+	border-radius: 0 0 5px 5px
+}
+.pmx_popuphead {
+	cursor: pointer;
+	margin-bottom: 0;
+	margin-top: 5px;
+}
+.pmx_popuphead_img {
+	padding-left: 10px;
+}
+
+/* blocks manager */
+.bm_ttldd {
+	top: 128px !important;
+	left: 81px !important;
+}
+.bm_ttldd_mb {
+	top: 119px !important;
+	left: 81px !important;
+}
+.bm_headrow {
+	height: 29px;
+}
+.bm_row {
+	height: 27px;
+}
+.bm_order {
+	width: 45px;
+	min-width: 45px;
+}
+.bm_ttl {
+	width: 57%;
+	min-width: 200px;
+	max-width: 200px;
+	white-space: nowrap;
+}
+.bm_ttl_act {
+	cursor: pointer;
+}
+.bm_typ {
+	width: 36%;
+	min-width: 140px;
+	max-width: 140px;
+	cursor: pointer;
+	white-space: nowrap;
+}
+.bm_opts {
+	width: 126px;
+	min-width: 126px;
+}
+.bm_stats {
+	width: 43px;
+	min-width: 43px;
+}
+.bm_func {
+	width: 105px;
+	min-width: 105px;
+}
+
+/* popup blocks manager rowmove */
+#pmxRowMove {
+	text-align: center;
+	width: 325px;
+	z-index: 999;
+	display: none;
+}
+.bmrowmv1 {
+	float: left;
+	text-align: left;
+	width: 98px;
+}
+.bmrowmv2 {
+	margin-top: 5px;
+}
+.bmrowmv3 {
+	margin-top: -10px;
+}
+.bmrowmv4 {
+	padding-left: 94px;
+}
+.bmrowmv5 {
+	margin-left: 5px;
+	margin-top: 0px;
+	text-align: left; 
+}
+.bmrowmv6 {
+	margin-top: 5px;
+	height: 18px;
+	text-align: left;
+}
+.bmrowmv7 {
+	vertical-align: -3px;
+}
+.bmrowmv8 {
+	width: 145px;
+	margin-top: 8px;
+}
+.bmrowmv9 {
+	margin-left: 3px;
+	display: none;
+}
+.bmrowmv10 {
+	float: right;
+	margin-top: -1px;
+}
+
+/* popup blocks manager title */
+#pmxSetTitle {
+	width: 325px;
+	z-index: 9999;
+	display: none;
+}
+
+/* article manager */
+.art_ttl {
+	width: 50%;
+	min-width: 180px;
+	max-width: 180px;
+	white-space: nowrap;
+}
+.art_ttl span {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.art_typ {
+	width: 95px;
+	min-width: 95px;
+	max-width: 95px;
+}
+.art_cat {
+	width: 35%;
+	min-width: 110px;
+	max-width: 110px;
+	white-space: nowrap;
+}
+.art_cat b {
+	display: inline-block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.art_opt {
+	width: 84px;
+}
+.art_stat {
+	width: 43px;
+}
+.art_func {
+	width: 84px;
+}
+.cat_ttl {
+	width: 50%;
+	min-width: 260px;
+	max-width: 260px;
+	white-space: nowrap;
+}
+.cat_ttl span {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.cat_cat {
+	width: 34%;
+	min-width: 180px;
+	max-width: 180px;
+	white-space: nowrap;
+}
+.cat_opt, .cat_func {
+	min-width: 84px;
+	max-width: 84px;
+	width: 84px;
+}
+.popup_rows {
+	height:0px;
+	z-index:900;
+}
+

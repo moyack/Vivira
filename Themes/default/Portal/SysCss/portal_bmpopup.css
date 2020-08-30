@@ -1,0 +1,114 @@
+/**
+ * PortaMx Forum
+ * @package PortaMx
+ * @author PortaMx
+ * @copyright 2018 PortaMx
+ *
+ * file portal_bmpopup.css
+ * CSS file Blocksmanager Popups
+ *
+ * @version 1.41
+ */
+
+/* blocks manager rowmove */
+#pmxRowMove {
+	text-align: center;
+	width: 325px;
+	z-index: 999;
+	display: none;
+}
+.bmrowmv0 {
+	float: left;
+	text-align: left;
+	width: 98px;
+}
+.bmrowmv2 {
+	margin-top: 5px;
+}
+.bmrowmv3 {
+	margin-top: -10px;
+}
+.bmrowmv4 {
+	padding-left: 94px;
+}
+.bmrowmv5 {
+	margin-left: 4px;
+	margin-top: 0px;
+	text-align: left; 
+}
+.bmrowmv6 {
+	margin-top: 5px;
+	height: 18px;
+	text-align: left;
+}
+.bmrowmv7 {
+	vertical-align: -3px;
+}
+.bmrowmv8 {
+	width: 145px;
+	margin-top: 8px;
+	margin-left: 2px;
+}
+.bmrowmv9 {
+	margin-left: 2px;
+	width: 150px;
+	display: none;
+}
+.bmrowmv10 {
+	float: right;
+	margin-top: -1px;
+}
+.bmblkseldd {
+	width: 185px;
+}
+/* blocks manager clone/move */
+#pmxSetCloneMove {
+	width: 210px;
+	z-index: 9999;
+	display: none;
+}
+.bmclmv0 {
+	float: left;
+}
+.bmclmv2 {
+	clear: both;
+	height: 4px;
+}
+.bmclmv3 {
+	width: 120px;
+}
+.bmclmv4 {
+	float: right;
+	margin-top: -1px;
+}
+
+/* blocks delete */
+#pmxSetDelete {
+	width: 220px;
+	z-index: 9999;
+	display: none;
+}
+.bmsetdl0 {
+	margin-top: -15px;
+}
+.bmsetdl2 {
+	float: right;
+	font-size: 11px;
+}
+
+/* blocks select new */
+#pmxBlockType {
+	width: 230px;
+	z-index: 9999;
+	display: none;
+}
+.bmsel0 {
+	margin: -4px 0 5px 0;
+}
+.bmsel2 {
+	width: 150px;
+}
+.bmsel3 {
+	float: right;
+	margin-top: -1px;
+}

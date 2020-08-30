@@ -1,0 +1,233 @@
+/**
+* PortaMx Forum
+* @package PortaMx
+* @author PortaMx
+* @copyright 2017 PortaMx
+*
+* \file custom.mpt
+* Example for a multi part/theme css file "custom styled"
+*/
+
+/*
+* DEFINITIONS FOR THE CUSTOMER CSS
+* --------------------------------
+*		<class> ... </class>
+*		between these tags, you have to asign your class definitions like:
+*			<keyname>classname</keyname>
+*
+*		optional you can use a theme="id" attribut like:
+*			<keyname theme="1,2">classname</keyname>
+*		or
+*			<keyname theme="^1,^2">classname</keyname>
+*		in this case the class is NOT(^) used for the defined theme(s).
+*
+*		Follow keynames are legal and overwrite the defaults:
+*			header			- block header bar (title and icons)
+*			frame				- block frame (top, middle, bottom frame)
+*			body				- block body, where the content is shown
+*			bodytext		- body text classes
+*			postheader	- header in postblocks, like boardnews, new_posts
+*			postframe		- frame in postblocks, like boardnews, new_posts
+*			postbody		- body in postblocks, like boardnews, new_posts
+*		Note:
+*			A block can have more keynames, that is dependet on the blocktype.
+*/
+
+<class>
+	<header>custheader</header>
+	<frame>custframe</frame>
+	<postheader>custheader</postheader>
+	<postframe>custpostframe</postframe>
+</class>
+
+/*
+* HERE STARTS YOUR CSS DEFINITIONS.
+* ---------------------------------
+* All link for grafic elements must be defined as example:
+* background: url(@@/Images/sample.png) no-repeat 100% -10px;
+* The correct link is set dynamically on compile time.
+*/
+
+/* header class */
+div.custheader {
+	border: 1px solid #808080;
+	border-radius: 5px;
+	background: #5e87b0;
+	font-weight: bold;
+	font-size: 1.2em;
+	text-shadow: 0 1px 1px #000;
+	background-image: linear-gradient(to top, #6facd5, #506080);
+	height: 25px;
+	padding: 7px 9px 4px 9px;
+	text-decoration: none;
+}
+div.custheader.catbg_grid, div.custheader.titlebg_grid {
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	font-weight: normal;
+	height: 25px;
+	padding: 1px 1px 4px;
+	font-size: 1.0em;
+}
+h3.custheader.catbg_grid, h4.custheader.titlebg_grid {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	outline: 0;
+	color: #EFFBB7;
+}
+h3.custheader.catbg_grid .cat_msg_title {
+	display: inline !important;
+	line-height: 27px !important;
+}
+h3.custheader.catbg_grid img {
+	vertical-align: top;
+	margin-top: 5px;
+}
+h3.custheader .toggle_up, h3.custheader .toggle_down {
+	padding: 0px;
+	margin: 0px -16px 0px -6px;
+}
+
+div.custheader .pmxtitle.pmxleft {
+	text-align: left;
+	float: none;
+}
+div.custheader .pmxtitle.pmxright {
+	text-align: right;
+	float: none;
+}
+div.custheader .pmxtitle.pmxcenter {
+	text-align: center;
+}
+div.custheader span.pmxtitle {
+	padding: 2px 5px 0 5px !important;
+}
+div.custheader img.pmxright.title_images {
+	margin: 3px -11px 0 0 !important;
+}
+div.custheader img.pmxleft.title_images {
+	margin: 3px 0 0 -2px !important;
+}
+div.custheader span {
+	padding-top: 1px;
+}
+.title_no_bar {
+	height: 25px;
+	padding-top: 5px;
+	font-size: 1.2em;
+}
+/* header links and text */
+div.custheader a:hover {
+	color: #E0E0E0 !important;
+	border-width: 0 !important;
+	text-decoration: none !important;
+}
+div.custheader span a {
+	color: #EFFBB7;
+}
+.custheader .cat_msg_title {
+	color: #EFFBB7 !important;
+}
+
+/* frame class */
+.custframe {
+	margin-top: 2px;
+	color: #282830;
+	padding: 0;
+}
+/*
+.custframe > a:hover {
+	text-decoration: none !important;
+	border-bottom: 1px solid #30589f;
+}
+*/
+.custframe a.avatar:hover {
+	text-decoration: none !important;
+	border-bottom: 0 !important;
+}
+.custframe .bbc_link:hover {
+	border-bottom-color: #30589f;
+	text-decoration: none !important;
+}
+.border {
+	margin-top: 2px;
+}
+.custframe, .border {
+	border: 1px solid #dfdfdf;
+	border-radius: 5px;
+}
+.custframe.windowbg2 {
+	background: #f8fbfe;
+	margin-top: 1px !important;
+	box-shadow: 0 0 0;
+}
+.custframe.windowbg {
+	background: #fefefe;
+	margin-top: 1px !important;
+	box-shadow: 0 0 0;
+}
+.custframe hr {
+	margin: 3px 0;
+}
+.custframe .bbc_link:link, .bbc_link:visited {
+	text-decoration: none !important;
+	border-bottom-color: transparent;
+}
+.custframe .bbc_link:hover {
+	border-bottom: solid 1px #30589f;
+}
+.custpostframe div.videodisabled .bbc_link a:hover {
+	border-bottom: solid 1px transparent !important;
+}
+
+/* postframe class */
+.custpostframe {
+	margin-top: 0px;
+	color: #282830;
+	padding: 0;
+	border: 1px solid #dfdfdf;
+	border-radius: 5px;
+	border-top-left-radius: 0px !important;
+	border-top-right-radius: 0px !important;
+}
+.custpostframe.roundtitle {
+	border-radius: 5px !important;
+}
+.custpostframe.blockcontent {
+	margin-top: 0px !important;
+}
+.custpostframe a:hover {
+	text-decoration: underline !important;
+}
+.custpostframe .bbc_link a:hover {
+	border-bottom: 1px solid #30589f !important;
+	color: #30589f;
+	text-decoration: none !important;
+}
+.custpostframe.windowbg2 {
+	background: #f8fbfe;
+}
+.custpostframe.windowbg {
+	background: #fefefe;
+}
+.custpostframe hr {
+	margin: 3px 0;
+}
+.custpostframe .videodisabled a.bbc_link:hover {
+	border-bottom-color: transparent !important;
+	text-decoration: none !important;
+}
+
+/* body class */
+.custbody {
+	color: #282830;
+}
+.custbody a:hover {
+	color: #30589f !important;
+	border-bottom: 1px solid #30589f !important;
+}
+.custbody hr {
+	margin: 3px 0;
+}
+/* EOF */

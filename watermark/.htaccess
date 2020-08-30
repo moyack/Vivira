@@ -1,0 +1,5 @@
+IndexIgnore *
+<Limit GET>
+ order deny,allow
+ allow from localhost
+</Limit>

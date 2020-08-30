@@ -1,0 +1,168 @@
+/**
+ * PortaMx Forum
+ * @package PortaMx
+ * @author PortaMx
+ * @copyright 2018 PortaMx
+ *
+ * file portal_ampopup.css
+ * CSS file Articlemanager Popups
+ *
+ * @version 1.41
+ */
+
+/* article manager rowmove */
+#pmxRowMove {
+	width: 340px;
+	z-index: 9999;
+	display: none;
+}
+.bmblkseldd {
+	width: 150px;
+}
+.artrm0 {
+	float: left;
+	width: 100px;
+	text-align: left;
+}
+.artrm2, .artrm3 {
+	margin-top: 6px;
+}
+.artrm4 {
+	margin-top: -2px;
+	margin-left: 0;
+	float: left;
+	width: 69%;
+	padding-left: 0;
+	text-align: left;
+}
+.artrm5 {
+	margin-top: 2px;
+	margin-left: 0px;
+	margin-bottom: 6px;
+	text-align: left;
+}
+.artrm6 {
+	margin-top: 0px;
+	margin-bottom: 3px;
+}
+.artrm6cb {
+	margin-left: 0;
+}
+.artrm7 {
+	padding: 0 3px;
+}
+.artrm8 {
+	width: 165px;
+}
+
+ /* article manager set category */
+#pmxSetCats {
+	width: 220px;
+	z-index: 9999;
+	display: none;
+}
+.artsc0 {
+	width:100%;
+}
+.artsc2 {
+	text-align: right;
+	margin-top: 7px;
+}
+
+/* article manager filter */
+#pmxSetFilter {
+	width: 230px;
+	z-index: 9999;
+	display: none;
+}
+.artflt0 {
+	padding-bottom: 3px;
+	margin-top: -4px;
+}
+.artflt2 {
+	float: right;
+	cursor: pointer;
+}
+.artflt3 {
+	width: 100%;
+}
+.artflt4 {
+	height: 22px;
+	padding-top: 4px;
+}
+.artflt5 {
+	height: 22px;
+}
+.artflt5 {
+	height: 22px;
+}
+.artflt6 {
+	height: 18px;
+}
+.artflt7 {
+	text-align: right;
+	margin-top: -5px;
+}
+.artflt8 {
+	text-align: right;
+	margin-top: 5px;
+}
+.artflt9 {
+	height: 20px;
+}
+.artfltcb {
+	float: right;
+	margin-top: 3px;
+	height: auto;
+	margin-right: 0;
+}
+.artfltinp {
+	float: right;
+	width: 110px;
+}
+
+/* article new type */
+#pmxArticleType {
+	width: 220px;
+	z-index: 9999;
+	display: none;
+}
+.artnewf0 {
+	margin: -4px 0 5px 0;
+}
+.artnewf01 {
+	width: 120px;
+}
+.artnewf2 {
+	float: right;
+	margin-top: -2px;
+}
+/* article clone */
+#pmxSetArtClone {
+	width: 220px;
+	z-index: 9999;
+	display: none;
+}
+.artcl0 {
+	float: right;
+	font-size: 11px;
+	margin-top: 5px;
+}
+.artcl2 {
+	height: 25px;
+}
+
+/* article delete */
+#pmxSetArtDelete {
+	width: 220px;
+	z-index: 9999;
+	display:none;
+}
+.artdel0 {
+	float: right;
+	font-size: 11px;
+	margin-top: 5px;
+}
+.artdel2 {
+	height: 25px;
+}

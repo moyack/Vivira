@@ -1,0 +1,61 @@
+/**
+ * Scrollbar styles for Webkit Browser (like Chrome & Opera)
+ *
+ * PortaMx Forum
+ * @package PortaMx
+ * @author PortaMx
+ * @copyright 2018 PortaMx
+ *
+ * @version 1.41
+ */
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+	background: rgba(220, 220, 220, 1);
+	border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+	background: rgba(94,135,176,1);
+	border-radius: 5px;
+	box-shadow: inset 0 0 3px rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-button:vertical:start:increment,
+::-webkit-scrollbar-button:vertical:end:decrement {
+	display: none;
+}
+::-webkit-scrollbar-button:vertical:increment {
+	background: rgba(94,135,176,1);
+	border-radius: 5px 5px 0 0;
+	box-shadow: inset 0 0 3px rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-button:vertical:decrement {
+	background: rgba(94,135,176,1);
+	border-radius: 0 0 5px 5px;
+	box-shadow: inset 0 0 3px rgba(0,0,0,0.5);
+}
+select::-webkit-scrollbar-button:vertical,
+textarea::-webkit-scrollbar-button:vertical,
+.right::-webkit-scrollbar-button:vertical,
+.onlinelist::-webkit-scrollbar-button:vertical,
+.dropdown::-webkit-scrollbar-button:vertical,
+.artflt3::-webkit-scrollbar-button:vertical,
+.artsc0::-webkit-scrollbar-button:vertical,
+.catart3::-webkit-scrollbar-button:vertical,
+.sboxcont::-webkit-scrollbar-button:vertical,
+.notdbut::-webkit-scrollbar-button:vertical,
+.blocktype::-webkit-scrollbar-button:vertical,
+.verdetais::-webkit-scrollbar-button:vertical,
+#ecl_privacy::-webkit-scrollbar-button:vertical,
+#pWindAcsGroup::-webkit-scrollbar-button:vertical,
+#pmxgroups::-webkit-scrollbar-button:vertical,
+#pWind.filter.category::-webkit-scrollbar-button:vertical,
+#pWind.cats.sel::-webkit-scrollbar-button:vertical,
+#pmxact::-webkit-scrollbar-button:vertical,
+#pmxbrd::-webkit-scrollbar-button:vertical,
+#pmxartsort::-webkit-scrollbar-button:vertical,
+#alerts_menu::-webkit-scrollbar-button:vertical,
+.bmclmv3::-webkit-scrollbar,
+.artnewf01::-webkit-scrollbar {
+	display: none;
+}

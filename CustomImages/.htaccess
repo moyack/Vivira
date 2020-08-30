@@ -1,0 +1,9 @@
+IndexIgnore *
+<Limit GET>
+ order deny,allow
+ allow from localhost
+</Limit>
+<Limit POST PUT DELETE>
+ order deny,allow
+ deny from all
+</Limit>

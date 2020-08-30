@@ -1,0 +1,118 @@
+/**
+ * PortaMx Forum
+ * @package PortaMx
+ * @author PortaMx
+ * @copyright 2018 PortaMx
+ *
+ * file portal_cmpopup.css
+ * CSS file Categorymanager Popups
+ *
+ * @version 1.41
+ */
+
+/* category manager rowmove */
+#pmxSetMove {
+	width: 335px;
+	z-index: 9999;
+	display: none;
+}
+.catrm0 {
+	float: left;
+	width: 120px;
+}
+.catrm2 {
+	margin-left: 120px;
+	margin-bottom: 3px;
+}
+.catrm3 {
+	float: left;
+	width:120px;
+}
+.catrm4 {
+	margin-left: 120px;
+}
+.catrm5 {
+	vertical-align: 1px;
+	padding: 0 5px;
+}
+.catrm6 {
+	float: left;
+	width: 120px;
+	margin-top: 6px;
+}
+.catrm7 {
+	margin-left: 120px;
+	margin-top: 6px;
+}
+.catrm8 {
+	width: 140px;
+}
+.catrm9 {
+	text-align: right;
+	margin-top: -1px;
+	height: 18px;
+}
+
+/* category name */
+#pmxSetCatName {
+	width: 280px;
+	z-index: 9999;
+	display:none;
+}
+.catsn0 {
+	float: left;
+	width: 140px;
+	height:25px;
+}
+.catsn2 {
+	height: 25px;
+}
+.catsn3 {
+	width: 210px;
+}
+.catsn4 {
+	text-align: right;
+	height: 20px;
+}
+
+/* article in cat */
+#pmxShowArt {
+	width: 250px;
+	z-index: 9999;
+	display: none;
+}
+.catart0 {
+	margin-top: -5px;
+}
+.catart2 {
+	max-height: 30px;
+	overflow: auto;
+}
+.catart3 {
+	max-height: 170px;
+	overflow-y: auto;
+}
+
+/* cat cone */
+#pmxSetCatClone {
+	width: 220px;
+	z-index: 9999;
+	display: none;
+}
+.catcl0 {
+	float: right;
+	font-size: 11px;
+	margin-top: 5px;
+}
+
+/* cat delete */
+#pmxSetCatDelete {
+	width: 220px;
+	z-index: 9999;
+	display: none;
+}
+.catdel0 {
+	float: right;
+	font-size: 11px;
+	margin-top: 5px;
+}

@@ -1,0 +1,145 @@
+/*! SCEditor | (C) 2011-2013, Sam Clarke | sceditor.com/license */
+html, p, code:before, table {
+	margin: 0;
+	padding: 0;
+}
+html {
+	height: 100%;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+body {
+	font: 83.33%/150% "Segoe UI", "Helvetica Neue", "Nimbus Sans L", Arial, "Liberation Sans", sans-serif;
+	position: relative;
+	min-height: 100%;
+	word-wrap: break-word;
+	overflow: auto;
+	margin: 0 5px;
+	padding: 0;
+}
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+	background: rgba(220, 220, 220, 1);
+	border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+	background: rgba(94,135,176,1);
+	border-radius: 5px;
+	box-shadow: inset 0 0 3px rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-button:vertical:start:increment,
+::-webkit-scrollbar-button:vertical:end:decrement {
+	display: none;
+}
+hr {
+	border: none;
+	margin: 8px 0 3px 0;
+	height: 2px;
+	background: #fff;
+	background-color: #fff;
+	box-shadow: 0 1px 0 #bbb inset;
+}
+ul, ol {
+	padding: 0 0 0 28px;
+	margin: 0px;
+}
+li ul, li ol {
+	padding: 0 0 0 18px;
+	margin: 0px;
+}
+table,td {
+	border: 1px dotted #000;
+	empty-cells: show;
+}
+code.php:before {
+	position: absolute;
+	font-weight: bold;
+	content: 'Highlighted Code:';
+	top: -1.65em;
+	left: 0;
+}
+code:before {
+	position: absolute;
+	font-weight: bold;
+	content: 'Code:';
+	top: -1.65em;
+	left: 0;
+}
+code {
+	margin-top: 1.7em;
+	position: relative;
+	background: #eee;
+	border: 1px solid #aaa;
+	border-bottom-width: 2px;
+	border-radius: 3px;
+	white-space: pre;
+	padding: .25em;
+	margin-bottom: 0px;
+	line-height: 1.5em;
+	font-size: 1.1em;
+}
+code.php {
+	background: #efefff;
+}
+code, code:before {
+	display: block;
+	text-align: left;
+	direction: ltr;
+}
+[data-sceditor-emoticon] {
+	vertical-align: -4px;
+}
+
+/* first level */
+blockquote {
+	margin: 7px 0 5px 0;
+	padding: 6px;
+	font-size: small;
+	border: 1px solid #d6dfe2;
+	border-left: 2px solid #aaa;
+	border-right: 2px solid #aaa;
+	background-color: #e0e6f6;
+	border-radius: 4px;
+}
+/* 2nd level */
+blockquote blockquote,
+blockquote blockquote blockquote blockquote {
+	background-color: #ebf4f8;
+}
+/* 3nd level */
+blockquote blockquote blockquote,
+blockquote blockquote blockquote blockquote blockquote blockquote {
+	background-color: #e0e6f6;
+}
+/* 4nd level */
+blockquote blockquote blockquote blockquote,
+blockquote blockquote blockquote blockquote blockquote blockquote blockquote blockquote {
+	background-color: #ebf4f8;
+}
+/* 5nd level */
+blockquote blockquote blockquote blockquote blockquote,
+blockquote blockquote blockquote blockquote blockquote blockquote blockquote blockquote blockquote blockquote {
+	background-color: #e0e6f6;
+}
+blockquote cite {
+	display: block;
+	font-size: 0.9em;
+	border-bottom: 1px solid #aaa;
+	margin-top: -4px;
+}
+blockquote cite:before {
+	color: #aaa;
+	font-size: 22px;
+	font-style: normal;
+	content: '\275D';
+	margin-right: 5px;
+	vertical-align:-7px;
+}
+div, p {
+	min-height: 1.25em;
+}
+h1,h2,h3,h4,h5,h6 {
+	padding: 0;
+	margin: 0;
+}
